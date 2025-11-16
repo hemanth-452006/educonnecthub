@@ -1,0 +1,435 @@
+/* General Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #a8edea, #fed6e3); /* same mixed gradient */
+  min-height: 100vh;
+  color: #333;
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.fade {
+  animation: fadeIn 0.7s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* LOGIN SECTION */
+.login-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  background: white;
+  padding: 3rem 4rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  width: 420px;
+  animation: fadeIn 1s ease;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 1.5rem;
+}
+
+/* Login Choice Buttons */
+.choice-btn {
+  background: #2563eb;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border: none;
+  padding: 1.2rem 2.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  margin: 1rem 0;
+  width: 100%;
+  transition: transform 0.25s, background 0.3s;
+  box-shadow: 0 5px 10px rgba(37, 99, 235, 0.3);
+}
+.choice-btn:hover {
+  background: #1d4ed8;
+  transform: scale(1.05);
+}
+
+/* Forms */
+.form-title {
+  font-size: 1.3rem;
+  color: #2563eb;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 2px solid #2563eb;
+  margin-top: 0.7rem;
+  outline: none;
+  font-size: 1rem;
+}
+
+.login-btn {
+  background: #2563eb;
+  color: white;
+  width: 100%;
+  border: none;
+  padding: 0.9rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.login-btn:hover {
+  background: #1d4ed8;
+}
+
+.error-msg {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.back-btn {
+  margin-top: 0.8rem;
+  background: #e0e7ff;
+  border: none;
+  color: #1e3a8a;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Dashboard Headers */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2563eb;
+  color: white;
+  padding: 1rem 2rem;
+}
+
+header h1 {
+  font-size: 1.5rem;
+}
+
+.logout-btn {
+  background: white;
+  color: #2563eb;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.logout-btn:hover {
+  background: #f1f5ff;
+}
+
+/* Sidebar */
+.sidebar {
+  background: #eff6ff;
+  min-width: 220px;
+  border-right: 1px solid #dbeafe;
+}
+.tab-btn {
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: 0.3s;
+  font-weight: 600;
+  color: #1e3a8a;
+}
+.tab-btn:hover {
+  background: #bfdbfe;
+}
+.tab-btn.active-tab {
+  background: #2563eb;
+  color: white;
+}
+
+/* Data Tables */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.data-table th, .data-table td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+.data-table th {
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+}
+.data-table tr:hover {
+  background: #f1f5ff;
+}
+
+/* Attendance Red Color for <75% */
+.low-attendance {
+  color: red;
+  font-weight: 700;
+}
+
+/* Cards and Boxes */
+.leader-card {
+  background: #dbeafe;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+}
+.feedback-box textarea {
+  width: 100%;
+  border: 2px solid #2563eb;
+  border-radius: 10px;
+  padding: 0.8rem;
+  resize: none;
+  font-size: 1rem;
+}
+.submit-btn {
+  margin-top: 1rem;
+  background: #2563eb;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.submit-btn:hover {
+  background: #1d4ed8;
+}
+
+/* Teacher Dashboard */
+.teacher-container {
+  text-align: center;
+  background: white;
+  padding: 3rem 4rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  width: 600px;
+  margin-top: 3rem;
+}
+.teacher-container h2 {
+  font-size: 1.8rem;
+  color: #2563eb;
+  margin-bottom: 1rem;
+}
+.teacher-container p {
+  color: #333;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+.teacher-container .logout-btn {
+  margin-top: 1rem;
+}
+
+/* Teacher Dashboard Buttons */
+.teacher-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 0.7rem;
+  transition: 0.3s;
+  box-shadow: 0 5px 10px rgba(37, 99, 235, 0.3);
+}
+.teacher-btn:hover {
+  background: #1d4ed8;
+  transform: scale(1.05);
+}
+
+/* Teacher Pages (Schedule / Attendance / Feedback View) */
+.teacher-page {
+  background: white;
+  padding: 2rem 3rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  border-radius: 1rem;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.teacher-page h2 {
+  color: #2563eb;
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.section-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+.section-card {
+  background: #dbeafe;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.section-card:hover {
+  background: #93c5fd;
+}
+
+/* Attendance Table for Teacher */
+.attendance-marking {
+  margin-top: 1.5rem;
+  background: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+}
+.attendance-marking table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.attendance-marking th, .attendance-marking td {
+  padding: 10px;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+}
+.attendance-marking th {
+  background: #2563eb;
+  color: white;
+}
+.present-mark {
+  color: green;
+  font-weight: bold;
+}
+.absent-mark {
+  color: red;
+  font-weight: bold;
+}
+
+/* Teacher Feedback Display */
+.feedback-list {
+  background: #f9fafb;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.feedback-item {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0.8rem 0;
+}
+.feedback-item:last-child {
+  border-bottom: none;
+}
+.feedback-item p {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+}
+.feedback-item .student-name {
+  font-weight: 700;
+  color: #2563eb;
+}
+/* ====== YOUR EXISTING CSS REMAINS SAME ====== */
+
+/* New Features for Teacher Dashboard */
+.marks-entry, .announcement-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  max-width: 700px;
+  margin: 2rem auto;
+}
+
+.marks-entry input, .announcement-box textarea {
+  width: 100%;
+  border: 2px solid #2563eb;
+  border-radius: 8px;
+  padding: 0.8rem;
+  margin-top: 0.7rem;
+  font-size: 1rem;
+}
+
+.announcement-box button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  margin-top: 0.8rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.announcement-list {
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.announcement-item {
+  background: #dbeafe;
+  padding: 0.7rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+}
+
+/* ANNOUNCEMENT POPUP */
+.announcement-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
+  text-align: center;
+  z-index: 2000;
+}
+
+.announcement-popup.hidden {
+  display: none;
+}
+
+.announcement-popup h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.announcement-popup p {
+  margin-bottom: 15px;
+}
+
+.submit-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}

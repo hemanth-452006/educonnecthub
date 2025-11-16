@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduConnect Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="flex flex-col">
+
+  <!-- LOGIN PAGE -->
+  <section id="loginPage" class="login-section">
+    <div class="login-container">
+      <h1 class="title mb-6">Welcome to EduConnect Hub</h1>
+
+      <div id="loginChoice" class="login-choice">
+        <button class="choice-btn" onclick="showLogin('student')">🧑‍🎓 Login as Student</button>
+        <button class="choice-btn" onclick="showLogin('teacher')">👩‍🏫 Login as Teacher</button>
+      </div>
+
+      <!-- Student Login -->
+      <form id="studentForm" class="login-form hidden">
+        <h2 class="form-title">Student Login</h2>
+        <input type="text" id="studentUser" placeholder="Student Username" required />
+        <input type="password" id="studentPass" placeholder="Password" required />
+        <button type="submit" class="login-btn">Login</button>
+        <p id="studentError" class="error-msg hidden">❌ Invalid Student Credentials</p>
+        <button type="button" class="back-btn" onclick="backToChoice()">⬅ Back</button>
+      </form>
+
+      <!-- Teacher Login -->
+      <form id="teacherForm" class="login-form hidden">
+        <h2 class="form-title">Teacher Login</h2>
+        <input type="text" id="teacherUser" placeholder="Teacher Username" required />
+        <input type="password" id="teacherPass" placeholder="Password" required />
+        <button type="submit" class="login-btn">Login</button>
+        <p id="teacherError" class="error-msg hidden">❌ Invalid Teacher Credentials</p>
+        <button type="button" class="back-btn" onclick="backToChoice()">⬅ Back</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- STUDENT DASHBOARD -->
+  <section id="studentDashboard" class="hidden fade min-h-screen flex flex-col">
+    <header>
+      <h1 class="text-xl font-bold">EduConnect Hub</h1>
+      <div>
+        <span>Welcome, <span id="studentName">Aman</span> (Section A)</span>
+        <button onclick="backToLogin()" class="logout-btn">Logout</button>
+      </div>
+    </header>
+  
+    <div class="flex flex-1">
+      <aside class="sidebar p-4">
+        <nav class="flex flex-col gap-2">
+          <button class="tab-btn active-tab" data-tab="courses">🏫 Courses</button>
+          <button class="tab-btn" data-tab="marks">📊 Results / Marks</button>
+          <button class="tab-btn" data-tab="attendance">🗓️ Attendance</button>
+          <button class="tab-btn" data-tab="leaderboard">🏆 Leaderboard</button>
+          <button class="tab-btn" data-tab="feedback">💬 Feedback</button>
+          <button class="tab-btn" data-tab="timetable">⏰ Timetable</button>
+        </nav>
+      </aside>
+
+      <main class="flex-1 p-6 overflow-y-auto">
+        <section id="courses" class="tab-content fade">
+          <h2 class="text-xl font-bold mb-3">My Courses</h2>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="leader-card"><h3>Web Development</h3><p>Instructor: Ms. Rao</p></div>
+            <div class="leader-card"><h3>Data Structures</h3><p>Instructor: Mr. Mehta</p></div>
+            <div class="leader-card"><h3>DBMS</h3><p>Instructor: Mrs. Kapoor</p></div>
+          </div>
+        </section>
+
+        <section id="marks" class="tab-content hidden fade">
+          <h2 class="text-xl font-bold mb-3">Results / Marks</h2>
+          <table class="data-table">
+            <thead><tr><th>Subject</th><th>Marks</th></tr></thead>
+            <tbody id="marksTable"></tbody>
+          </table>
+          <canvas id="marksChart" class="mt-6"></canvas>
+        </section>
+
+        <section id="attendance" class="tab-content hidden fade">
+          <h2 class="text-xl font-bold mb-3">Attendance</h2>
+          <table class="data-table">
+            <thead><tr><th>Subject</th><th>Attendance (%)</th></tr></thead>
+            <tbody id="attendanceTable"></tbody>
+          </table>
+          <canvas id="attendanceChart" class="mt-6"></canvas>
+        </section>
+
+        <section id="leaderboard" class="tab-content hidden fade">
+          <h2 class="text-xl font-bold mb-3">Leaderboard</h2>
+          <div id="leaderboardList" class="grid md:grid-cols-3 gap-4"></div>
+        </section>
+
+        <section id="feedback" class="tab-content hidden fade">
+          <h2 class="text-xl font-bold mb-3">Submit Feedback</h2>
+          <div class="feedback-box">
+            <textarea id="feedbackInput" placeholder="Write your feedback..."></textarea>
+            <button onclick="submitFeedback()" class="submit-btn">Submit</button>
+            <p id="feedbackMsg" class="hidden mt-2 text-green-600">✅ Feedback submitted!</p>
+          </div>
+        </section>
+
+        <section id="timetable" class="tab-content hidden fade">
+          <h2 class="text-xl font-bold mb-3">Weekly Timetable</h2>
+          <table class="data-table">
+            <thead>
+              <tr><th>Day</th><th>9-10</th><th>10-11</th><th>11:15-12:15</th><th>1-2</th><th>2-3</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Mon</td><td>Web Dev</td><td>DBMS</td><td>DS</td><td>Break</td><td>Library</td></tr>
+              <tr><td>Tue</td><td>DBMS</td><td>Web Dev</td><td>DS</td><td>Break</td><td>Sports</td></tr>
+              <tr><td>Wed</td><td>DS</td><td>DBMS</td><td>Web Dev</td><td>Break</td><td>Library</td></tr>
+              <tr><td>Thu</td><td>Web Dev</td><td>DS</td><td>DBMS</td><td>Break</td><td>Workshop</td></tr>
+              <tr><td>Fri</td><td>DBMS</td><td>Web Dev</td><td>Project</td><td>Break</td><td>Sports</td></tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <!-- ANNOUNCEMENT POPUP -->
+    <div id="announcementPopup" class="announcement-popup hidden">
+      <h3>📢 New Announcement</h3>
+      <p id="announcementText"></p>
+      <button onclick="markAnnouncementSeen()" class="submit-btn">Mark as Seen</button>
+    </div>
+
+  </section>
+
+  <!-- TEACHER DASHBOARD -->
+  <section id="teacherDashboard" class="hidden fade min-h-screen flex flex-col">
+    <header>
+      <h1 class="text-xl font-bold">EduConnect Hub</h1>
+      <div>
+        <span>Welcome, <span id="teacherName">Ms. Sharma</span></span>
+        <button onclick="backToLogin()" class="logout-btn">Logout</button>
+      </div>
+    </header>
+
+    <main class="flex-1 flex flex-col items-center text-center p-10">
+      <h2 class="text-2xl font-bold mb-4">Teacher Dashboard</h2>
+      <p class="max-w-xl mb-6">Welcome Ms. Sharma! You teach <strong>Web Development</strong> for Sections A, B, and C.</p>
+
+      <div class="grid gap-6 md:grid-cols-3">
+        <button class="teacher-btn" onclick="openSchedule()">📅 View Schedule</button>
+        <button class="teacher-btn" onclick="openAttendance()">🗒️ Take Attendance</button>
+        <button class="teacher-btn" onclick="openMarksEntry()">🧾 Enter Marks</button>
+        <button class="teacher-btn" onclick="openResultChart()">📊 View Result Chart</button>
+        <button class="teacher-btn" onclick="openAnnouncements()">📢 Announcements</button>
+        <button class="teacher-btn" onclick="openFeedback()">💬 See Feedback</button>
+
+        <!-- ⭐ NEW SECTIONS BUTTON -->
+        <button class="teacher-btn" onclick="openSections()">🏫 Sections</button>
+
+      </div>
+
+      <!-- ⭐ NEW SECTIONS UI -->
+      <section id="teacherSections" class="hidden mt-8">
+        <h2 class="text-xl font-bold mb-4">Select Section</h2>
+
+        <div class="flex gap-4 justify-center mb-6">
+          <button class="teacher-btn" onclick="showStudents('A')">Section A</button>
+          <button class="teacher-btn" onclick="showStudents('B')">Section B</button>
+          <button class="teacher-btn" onclick="showStudents('C')">Section C</button>
+        </div>
+
+        <div id="studentsList" class="hidden">
+          <h3 class="text-lg font-semibold mb-2">Students</h3>
+          <ul id="studentNames" class="text-left mx-auto w-40"></ul>
+        </div>
+      </section>
+
+    </main>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
