@@ -433,3 +433,14 @@ header h1 {
   border-radius: 6px;
   cursor: pointer;
 }
+
+/* ===== APPLY SAME BACKGROUND GRADIENT TO TEACHER POPUP WINDOWS ===== */
+
+.teacher-page,
+.marks-entry,
+.attendance-marking,
+.feedback-list,
+.announcement-box,
+.announcement-popup {
+  background: white  !important;
+}
