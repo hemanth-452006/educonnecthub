@@ -8,6 +8,16 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- ⭐ ADDED COLOR FOR TEACHER POPUP WINDOWS -->
+  <style>
+    .popup-window {
+      background: #ffe6f2;       
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    }
+  </style>
 </head>
 
 <body class="flex flex-col">
@@ -22,7 +32,6 @@
         <button class="choice-btn" onclick="showLogin('teacher')">👩‍🏫 Login as Teacher</button>
       </div>
 
-      <!-- Student Login -->
       <form id="studentForm" class="login-form hidden">
         <h2 class="form-title">Student Login</h2>
         <input type="text" id="studentUser" placeholder="Student Username" required />
@@ -32,7 +41,6 @@
         <button type="button" class="back-btn" onclick="backToChoice()">⬅ Back</button>
       </form>
 
-      <!-- Teacher Login -->
       <form id="teacherForm" class="login-form hidden">
         <h2 class="form-title">Teacher Login</h2>
         <input type="text" id="teacherUser" placeholder="Teacher Username" required />
@@ -74,6 +82,7 @@
             <div class="leader-card"><h3>Data Structures</h3><p>Instructor: Mr. Mehta</p></div>
             <div class="leader-card"><h3>DBMS</h3><p>Instructor: Mrs. Kapoor</p></div>
           </div>
+          
         </section>
 
         <section id="marks" class="tab-content hidden fade">
@@ -126,7 +135,6 @@
       </main>
     </div>
 
-    <!-- ANNOUNCEMENT POPUP -->
     <div id="announcementPopup" class="announcement-popup hidden">
       <h3>📢 New Announcement</h3>
       <p id="announcementText"></p>
@@ -149,39 +157,25 @@
       <h2 class="text-2xl font-bold mb-4">Teacher Dashboard</h2>
       <p class="max-w-xl mb-6">Welcome Ms. Sharma! You teach <strong>Web Development</strong> for Sections A, B, and C.</p>
 
-      <div class="grid gap-6 md:grid-cols-3">
+      <div class="grid gap-6 md:grid-cols-3" id="teacherButtonsGrid">
         <button class="teacher-btn" onclick="openSchedule()">📅 View Schedule</button>
         <button class="teacher-btn" onclick="openAttendance()">🗒️ Take Attendance</button>
         <button class="teacher-btn" onclick="openMarksEntry()">🧾 Enter Marks</button>
         <button class="teacher-btn" onclick="openResultChart()">📊 View Result Chart</button>
         <button class="teacher-btn" onclick="openAnnouncements()">📢 Announcements</button>
         <button class="teacher-btn" onclick="openFeedback()">💬 See Feedback</button>
-
-        <!-- ⭐ NEW SECTIONS BUTTON -->
-        <button class="teacher-btn" onclick="openSections()">🏫 Sections</button>
-
       </div>
 
-      <!-- ⭐ NEW SECTIONS UI -->
-      <section id="teacherSections" class="hidden mt-8">
-        <h2 class="text-xl font-bold mb-4">Select Section</h2>
-
-        <div class="flex gap-4 justify-center mb-6">
-          <button class="teacher-btn" onclick="showStudents('A')">Section A</button>
-          <button class="teacher-btn" onclick="showStudents('B')">Section B</button>
-          <button class="teacher-btn" onclick="showStudents('C')">Section C</button>
-        </div>
-
-        <div id="studentsList" class="hidden">
-          <h3 class="text-lg font-semibold mb-2">Students</h3>
-          <ul id="studentNames" class="text-left mx-auto w-40"></ul>
-        </div>
-      </section>
-
+      <!-- INLINE TOOL AREA (hidden until needed) -->
+      <div id="teacherToolArea" class="hidden w-11/12 mt-6">
+        <!-- content will be injected here by appended JS -->
+      </div>
     </main>
   </section>
 
   <script src="script.js"></script>
 </body>
 </html>
+
+
 
