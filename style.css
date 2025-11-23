@@ -1,0 +1,679 @@
+/* General Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #a8edea, #fed6e3); /* same mixed gradient */
+  min-height: 100vh;
+  color: #333;
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.fade {
+  animation: fadeIn 0.7s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* LOGIN SECTION */
+.login-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  background: white;
+  padding: 3rem 4rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  width: 420px;
+  animation: fadeIn 1s ease;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 1.5rem;
+}
+
+/* Login Choice Buttons */
+.choice-btn {
+  background: #2563eb;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border: none;
+  padding: 1.2rem 2.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  margin: 1rem 0;
+  width: 100%;
+  transition: transform 0.25s, background 0.3s;
+  box-shadow: 0 5px 10px rgba(37, 99, 235, 0.3);
+}
+.choice-btn:hover {
+  background: #1d4ed8;
+  transform: scale(1.05);
+}
+
+/* Forms */
+.form-title {
+  font-size: 1.3rem;
+  color: #2563eb;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 2px solid #2563eb;
+  margin-top: 0.7rem;
+  outline: none;
+  font-size: 1rem;
+}
+
+.login-btn {
+  background: #2563eb;
+  color: white;
+  width: 100%;
+  border: none;
+  padding: 0.9rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.login-btn:hover {
+  background: #1d4ed8;
+}
+
+.error-msg {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.back-btn {
+  margin-top: 0.8rem;
+  background: #e0e7ff;
+  border: none;
+  color: #1e3a8a;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Dashboard Headers */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2563eb;
+  color: white;
+  padding: 1rem 2rem;
+}
+
+header h1 {
+  font-size: 1.5rem;
+}
+
+.logout-btn {
+  background: white;
+  color: #2563eb;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.logout-btn:hover {
+  background: #f1f5ff;
+}
+
+/* Sidebar */
+.sidebar {
+  background: #eff6ff;
+  min-width: 220px;
+  border-right: 1px solid #dbeafe;
+}
+.tab-btn {
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: 0.3s;
+  font-weight: 600;
+  color: #1e3a8a;
+}
+.tab-btn:hover {
+  background: #bfdbfe;
+}
+.tab-btn.active-tab {
+  background: #2563eb;
+  color: white;
+}
+
+/* Data Tables */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.data-table th, .data-table td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+.data-table th {
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+}
+.data-table tr:hover {
+  background: #f1f5ff;
+}
+
+/* Attendance Red Color for <75% */
+.low-attendance {
+  color: red;
+  font-weight: 700;
+}
+
+/* Cards and Boxes */
+.leader-card {
+  background: #dbeafe;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+}
+.feedback-box textarea {
+  width: 100%;
+  border: 2px solid #2563eb;
+  border-radius: 10px;
+  padding: 0.8rem;
+  resize: none;
+  font-size: 1rem;
+}
+.submit-btn {
+  margin-top: 1rem;
+  background: #2563eb;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.submit-btn:hover {
+  background: #1d4ed8;
+}
+
+/* Teacher Dashboard */
+.teacher-container {
+  text-align: center;
+  background: white;
+  padding: 3rem 4rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  width: 600px;
+  margin-top: 3rem;
+}
+.teacher-container h2 {
+  font-size: 1.8rem;
+  color: #2563eb;
+  margin-bottom: 1rem;
+}
+.teacher-container p {
+  color: #333;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+.teacher-container .logout-btn {
+  margin-top: 1rem;
+}
+
+/* Teacher Dashboard Buttons */
+.teacher-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 0.7rem;
+  transition: 0.3s;
+  box-shadow: 0 5px 10px rgba(37, 99, 235, 0.3);
+}
+.teacher-btn:hover {
+  background: #1d4ed8;
+  transform: scale(1.05);
+}
+
+/* Teacher Pages (Schedule / Attendance / Feedback View) */
+.teacher-page {
+  background: white;
+  padding: 2rem 3rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  border-radius: 1rem;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.teacher-page h2 {
+  color: #2563eb;
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.section-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+.section-card {
+  background: #dbeafe;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.section-card:hover {
+  background: #93c5fd;
+}
+
+/* Attendance Table for Teacher */
+.attendance-marking {
+  margin-top: 1.5rem;
+  background: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+}
+.attendance-marking table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.attendance-marking th, .attendance-marking td {
+  padding: 10px;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+}
+.attendance-marking th {
+  background: #2563eb;
+  color: white;
+}
+.present-mark {
+  color: green;
+  font-weight: bold;
+}
+.absent-mark {
+  color: red;
+  font-weight: bold;
+}
+
+/* Teacher Feedback Display */
+.feedback-list {
+  background: #f9fafb;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.feedback-item {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0.8rem 0;
+}
+.feedback-item:last-child {
+  border-bottom: none;
+}
+.feedback-item p {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+}
+.feedback-item .student-name {
+  font-weight: 700;
+  color: #2563eb;
+}
+/* ====== YOUR EXISTING CSS REMAINS SAME ====== */
+
+/* New Features for Teacher Dashboard */
+.marks-entry, .announcement-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  max-width: 700px;
+  margin: 2rem auto;
+}
+
+.marks-entry input, .announcement-box textarea {
+  width: 100%;
+  border: 2px solid #2563eb;
+  border-radius: 8px;
+  padding: 0.8rem;
+  margin-top: 0.7rem;
+  font-size: 1rem;
+}
+
+.announcement-box button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  margin-top: 0.8rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.announcement-list {
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.announcement-item {
+  background: #dbeafe;
+  padding: 0.7rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+}
+
+/* ANNOUNCEMENT POPUP */
+.announcement-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
+  text-align: center;
+  z-index: 2000;
+}
+
+.announcement-popup.hidden {
+  display: none;
+}
+
+.announcement-popup h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.announcement-popup p {
+  margin-bottom: 15px;
+}
+
+.submit-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ===== APPLY SAME BACKGROUND GRADIENT TO TEACHER POPUP WINDOWS ===== */
+
+.teacher-page,
+.marks-entry,
+.attendance-marking,
+.feedback-list,
+.announcement-box,
+.announcement-popup {
+  background: white  !important;
+}
+/* Basic page layout (tweak to match your theme/Tailwind) */
+:root {
+  --card-bg: #e9f3ff;
+  --overlay-bg: rgba(6,50,60,0.06);
+  --panel-bg: white;
+  --primary: #1e66ff;
+}
+
+body.page-root {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg,#bfeee6 0%, #e6dbe6 100%);
+}
+
+.topbar {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 24px;
+  background: linear-gradient(90deg,#1e66ff,#2a56c6);
+  color: #fff;
+}
+
+.container {
+  padding: 28px;
+}
+
+/* Cards grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 20px;
+  align-items: start;
+  margin-top: 12px;
+}
+
+/* Teacher card */
+.teacher-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--card-bg);
+  padding: 28px;
+  min-height: 110px;
+  transition: transform .18s ease, box-shadow .18s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+
+.teacher-card:focus {
+  outline: 3px solid rgba(30,102,255,0.12);
+}
+
+.teacher-card:hover { transform: translateY(-6px); box-shadow: 0 8px 30px rgba(10,30,60,0.08); }
+
+.card-body h3 {
+  margin: 0 0 6px 0;
+  font-size: 1.05rem;
+}
+.card-body p { margin: 0; font-weight:600; color:#123; }
+
+/* Overlay that appears on hover or focus */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--overlay-bg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .18s ease;
+  border-radius: inherit;
+}
+
+.teacher-card:hover .card-overlay,
+.teacher-card:focus-within .card-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Message button */
+.msg-btn {
+  background: linear-gradient(180deg,#fff,#f1f7ff);
+  border: 1px solid rgba(0,0,0,0.06);
+  padding: 10px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+}
+.msg-btn:focus { outline: 3px solid rgba(30,102,255,0.14); outline-offset: 2px; }
+
+/* Modal styles */
+.msg-modal { position: fixed; inset:0; display:flex; align-items:center; justify-content:center; z-index:1100; }
+.msg-modal-backdrop {
+  position:absolute; inset:0; background: rgba(0,0,0,0.36);
+}
+.msg-modal-panel {
+  position: relative;
+  width: min(640px,94%);
+  margin: 16px;
+  background: var(--panel-bg);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 18px 60px rgba(10,20,50,0.2);
+  z-index: 2;
+}
+.modal-close {
+  position: absolute;
+  right: 12px; top: 12px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+#msg-form { display:flex; flex-direction:column; gap:10px; margin-top:6px; }
+#msg-form label { font-size: 13px; font-weight:600; margin-top:6px; }
+#msg-form input, #msg-form textarea {
+  padding: 10px;
+  border-radius:8px;
+  border: 1px solid #e6eaf0;
+  font-size: 14px;
+  width:100%;
+  box-sizing:border-box;
+}
+
+/* Modal actions */
+.modal-actions { display:flex; gap:8px; margin-top:8px; justify-content:flex-end; }
+.btn-primary { background:var(--primary); color:#fff; border:none; padding:10px 14px; border-radius:8px; cursor:pointer; }
+.btn-secondary { background:#f3f4f7; border:1px solid #e6eaf0; padding:10px 12px; border-radius:8px; cursor:pointer; }
+
+/* -------- Floating message button (non-intrusive) -------- */
+/* Ensure teacher-card is positioned to allow absolute placement */
+.teacher-card { position: relative; }
+
+/* floating small circular button (top-right) */
+.msg-floating {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  display: none;            /* hidden by default */
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.06);
+  background: rgba(255,255,255,0.96);
+  box-shadow: 0 6px 14px rgba(10,30,80,0.06);
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  transition: transform .12s ease, opacity .12s ease;
+  padding: 0;
+}
+
+/* show on hover or keyboard focus within the card */
+.teacher-card:hover .msg-floating,
+.teacher-card:focus-within .msg-floating {
+  display: inline-flex;
+  transform: translateY(-2px);
+  opacity: 1;
+}
+
+/* subtle focus ring for keyboard users */
+.msg-floating:focus {
+  outline: 3px solid rgba(30,102,255,0.14);
+  outline-offset: 2px;
+}
+
+/* keep small button from shifting layout if card has overflow */
+.teacher-card .msg-floating { z-index: 5; }
+
+/* -------- Modal (fixed centered) -------- */
+.msg-modal { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 1200; }
+.msg-modal[aria-hidden="true"] { display: none; }
+
+.msg-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.36);
+  z-index: 1200;
+}
+
+/* modal panel */
+.msg-modal-panel {
+  position: relative;
+  z-index: 1210;
+  width: min(640px, 94%);
+  max-height: 86vh;
+  overflow: auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 18px 60px rgba(10,20,50,0.18);
+}
+
+/* close button */
+.modal-close {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* form inside modal */
+#msg-form { display: flex; flex-direction: column; gap: 10px; margin-top: 6px; }
+#msg-form label { font-weight: 600; font-size: 13px; }
+#msg-form input, #msg-form textarea { padding: 10px; border-radius: 8px; border: 1px solid #e6eaf0; font-size: 14px; width:100%; box-sizing:border-box; }
+
+.modal-actions { display:flex; gap:8px; justify-content:flex-end; margin-top:6px; }
+.btn-primary { background: #1e66ff; color: #fff; border: none; padding: 9px 14px; border-radius: 8px; cursor: pointer; }
+.btn-secondary { background: #f3f4f7; border: 1px solid #e6eaf0; padding: 9px 12px; border-radius: 8px; cursor: pointer; }
+
+@media (max-width:640px) {
+  .msg-floating { top: 8px; right: 8px; width:34px; height:34px; }
+  .msg-modal-panel { width: 94%; padding: 14px; }
+}
+/* minor helper for modals - if not already included */
+.msg-modal { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 1200; }
+.msg-modal[aria-hidden="true"] { display: none; }
+.msg-modal-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.36); z-index:1200; }
+.msg-modal-panel { z-index: 1210; width: min(720px,94%); background: #fff; border-radius: 12px; padding: 18px; box-shadow: 0 18px 60px rgba(10,20,50,0.18); max-height:86vh; overflow:auto; }
+.modal-close { position: absolute; right: 12px; top: 12px; border: none; background: transparent; font-size: 18px; cursor: pointer; }
+#add-student-form input, #add-student-form textarea { width:100%; padding:8px; border-radius:6px; border:1px solid #e6eaf0; box-sizing:border-box; }
+#teacher-inbox-modal #inbox-list { max-height: 50vh; overflow:auto; padding-right:6px; }
+.inbox-item { border-bottom: 1px solid #eee; padding: 10px 6px; }
+.inbox-item .meta { color:#666; font-size: 13px; margin-bottom:6px; }
+.inbox-item.unread { background: rgba(30,102,255,0.03); }
